@@ -72,10 +72,21 @@
         </tr>
       </tbody>
     </table>
+
     <h2>New book</h2>
       <form>
-        <div class="field"></div>
-        <div class="field"></div>
-        <div class="action"></div>
+        <div class="field">
+          <label for="book-title">Title</label>
+          <input class="book-title" type="text" name="book[title]" id="book-title">
+        </div>
+        <div class="field">
+          <label for="book-body">Body</label>
+          <textarea class="book-body" name="book[body]" id="book-body"></textarea>
+        </div>
+        <div class="action">
+          <input type="submit" name="commit" value="Create Book" data-disable-with="Create Book">
+        </div>
       </form>
   </body>
+
+</html>
