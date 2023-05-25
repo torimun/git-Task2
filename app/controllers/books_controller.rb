@@ -1,26 +1,28 @@
 class BooksController < ApplicationController
-  def new
-    @list = List.new
-  end
 
   def index
-    @list = List.all
+    @books = Book.all
+    @book = Book.new
   end
 
   def create
-    list = List.new(book_params)
-    list.save
-    redirect_to book_path(list.id)
+    book = Book.new(book_params)
+    book.save
+    redirect_to book_path(book.id)
   end
 
   def show
-    @list = List.find(params[:id])
+    @book = Book.find(params[:id])
   end
 
   def edit
+    @book = Book.find(params[:id])
   end
 
   def update
+    book = Book.find(params[:id])
+    book.update(book_params)
+    redirect_to book_path(book.id)
   end
 
   def destroy
@@ -29,6 +31,6 @@ class BooksController < ApplicationController
   private
   # ストロングパラメータ
   def book_params
-    params.require(:list).permit(:title, :body)
+    params.require(:book).permit(:title, :body)
   end
 end
