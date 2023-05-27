@@ -1,12 +1,1 @@
 
-<!-- form_with部分 -->
-<%= form_with model: @book, url: '/books', method: :post do |f| %>
-
-  <strong>Title</strong>
-  <%= f.text_field :title %>
-
-  <strong>Body</strong>
-  <%= f.text_area :body %>
-
-  <%= f.submit 'Create Book' %>
-<% end %>
