@@ -14,7 +14,7 @@ class BooksController < ApplicationController
     else
       @books = Book.all
       render action: :index
-    end
+  end
   end
 
   def show
